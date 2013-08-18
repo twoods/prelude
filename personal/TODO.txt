@@ -1,0 +1,1 @@
+Add etags-table to default install packages (for etags-select in vendor)
