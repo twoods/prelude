@@ -1,4 +1,5 @@
 ;; Use etags-select and etags-select
+(prelude-require-package 'etags-table)
 (require 'etags-select)
 (require 'etags-table)
 (setq etags-table-search-up-depth 10)
