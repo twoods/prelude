@@ -4,10 +4,11 @@
       c-basic-offset 4)
 
 ;;; Use spaces instead of tabs
-(defun my-prelude-c-mode-defaults ()
-  (setq indent-tabs-mode nil))
+(defun my-c-mode-defaults ()
+  (setq indent-tabs-mode nil)
+  (prelude-enable-whitespace))
 
-(add-hook 'prelude-c-mode-common-hook 'my-prelude-c-mode-defaults t)
+(add-hook 'c-mode-common-hook 'my-c-mode-defaults t)
 
 
 ;;; Customize C keymap
