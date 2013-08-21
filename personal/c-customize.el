@@ -19,6 +19,22 @@
 (add-hook 'c-initialization-hook 'my-c-initialization-hook)
 
 
+;;; use smartparens to indent new blocks correctly
+;;; From smartparens wiki
+(defun my-open-block-c-mode (id action context)
+  (when (eq action 'insert)
+    ;;; Indent first to properly align brace (twoods)
+    (indent-according-to-mode)
+    (newline)
+    (newline)
+    (indent-according-to-mode)
+    (previous-line)
+    (indent-according-to-mode)))
+
+(sp-with-modes '(c-mode c++-mode java-mode)
+  (sp-local-pair "{" nil :post-handlers '(:add my-open-block-c-mode)))
+
+
 ;;; Enable c-eldoc
 (prelude-require-package 'c-eldoc)
 (add-hook 'c-mode-hook 'c-turn-on-eldoc-mode)
