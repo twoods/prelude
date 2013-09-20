@@ -5,7 +5,6 @@
 
 ;;; Use spaces instead of tabs
 (defun my-c-mode-defaults ()
-  (setq indent-tabs-mode nil)
   (prelude-enable-whitespace))
 
 (add-hook 'c-mode-common-hook 'my-c-mode-defaults t)
